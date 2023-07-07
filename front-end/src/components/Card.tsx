@@ -10,7 +10,7 @@ export default function Card({children}:{children:JSX.Element}){
                 return
             
             
-            setBorderLeft(window.innerWidth/2-rect.width/2)
+            setBorderLeft((window.innerWidth/2-rect.width/2)+7)
             setBorderTop((window.innerHeight/2-rect.height/2)+7)
         }
         updateSize()

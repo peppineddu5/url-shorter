@@ -7,8 +7,8 @@ export default function Form(){
     }
     return(
         <form>
-            <input type='text' name="url" id="url"value={value} onChange={handleChange} />
-            <SubmitButton></SubmitButton>
+            <input className="link-button input-url" type='text' name="url" id="url"value={value} onChange={handleChange} />
+            <SubmitButton/>
         </form>
     )
 }
