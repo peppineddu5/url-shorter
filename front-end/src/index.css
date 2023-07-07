@@ -1,0 +1,29 @@
+html,
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color:#F8F8F8;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  position: relative;
+  padding: 0;
+  border: 7px solid #222222;
+}
+.card .border{
+  position: absolute;
+  top: 100%;
+  
+  width: 7px;
+  height: 7px;
+  z-index: 10;
+  background-color: #222222;
+  transition: height 0.5s,width 0.5s;
+}
