@@ -14,6 +14,7 @@ body{
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  color:#222222;
 }
 .card{
   position: relative;
@@ -63,4 +64,37 @@ form{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.result{
+  position: absolute;
+  top: -50px;
+  height: 50px;
+  left: 0;
+  border: 7px solid #222222;
+  min-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.result h2 .green{
+  color: green;
+}
+.result h2 .red{
+  color: red;
+}
+.copy{
+  background-image: url("../public/content_copy_FILL0_wght400_GRAD0_opsz48.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  border: 7px solid #222222;
+  border-right: none;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+.copy:active{
+  background-color: #848484;
 }

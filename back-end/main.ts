@@ -1,7 +1,7 @@
 import express from 'express';
 import { addCode, searchCode } from './lib/db';
 import {  generateCodeValidated } from './lib/general';
-
+import cors from "cors"
 
 const expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 const regex = new RegExp(expression);
@@ -9,7 +9,7 @@ const regex = new RegExp(expression);
 const app = express();
 app.use(express.static('../front-end/build'))
 app.use(express.json());
-
+app.use(cors())
 
 app.post("/generate-link",async(req,res)=>{
     if(!req.body.url){
@@ -30,7 +30,6 @@ app.post("/generate-link",async(req,res)=>{
 })
 
 app.get("/:code",async(req,res)=>{
-    
     if(req.params.code.length!=5){
         res.redirect("/")
         return
@@ -41,13 +40,14 @@ app.get("/:code",async(req,res)=>{
         return
     }
     let url=table[0].url
+    
     if (!/^https?:\/\//i.test(url))
         url = 'http://' + url;
     
     res.redirect(302,url)
-    
+   
 })
 
 app.listen(3000, () => {
-    console.log('The application is listening on port 3000!');
+    console.log('3000!');
 })
